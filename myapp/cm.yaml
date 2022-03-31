@@ -6,4 +6,4 @@ data:
   index.html: |
     Congratulations! <p>
     This is  myapp deployed via ArgoCD!
-  We are changed something! :)
+  We are changed something! )
