@@ -15,10 +15,11 @@ spec:
       {{- include "webapp.selectorLabels" . | nindent 6 }}
   template:
     metadata:
-      {{- with .Values.podAnnotations }}
       annotations:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
+        gitops.training.sass.ro/appVersion: {{ .Chart.AppVersion | quote}}
+        {{- with .Values.podAnnotations }}
+          {{- toYaml . | nindent 8 }}
+        {{- end }}
       labels:
         {{- include "webapp.selectorLabels" . | nindent 8 }}
     spec:
